@@ -3,7 +3,7 @@ name: Build & Release Chrome Extension
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build-and-release:
