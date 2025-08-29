@@ -9,9 +9,11 @@ TODO
 
 #### Default shortcuts:
 
-| OS       | Shortcut     |
-|----------|--------------|
-| Windows  | Ctrl+Shift+L |
-| MacOS    | Ctrl+Shift+L |
-| Linux    | Ctrl+Shift+L |
-| ChromeOS | Ctrl+Shift+L |
+| OS       | Shortcut        |
+|----------|-----------------|
+| Windows  | Ctrl+Shift+L    |
+| MacOS    | Command+Shift+L |
+| Linux    | Ctrl+Shift+L    |
+| ChromeOS | Ctrl+Shift+L    |
+To manually configure shortcuts, navigate to: 
+> chrome://extensions/shortcuts
