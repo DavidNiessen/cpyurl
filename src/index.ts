@@ -2,16 +2,17 @@ export const copyUrl = async () => {
   const currentTab = await getCurrentTab()
 
   if (currentTab) {
-    await executeTabScript(currentTab, writeToClipboard)
+    await executeCopyScript(currentTab)
   }
 }
 
-const executeTabScript = async (tab: any, action: (url: string) => void) => {
+const executeCopyScript = async (tab: any) => {
   if (tab.id && tab.url) {
     await chrome.scripting.executeScript({
       target: { tabId: tab.id },
-      func: (url: string) => {
-        action(url)
+      func: (url) => {
+        console.log('Copying URL to clipboard:', url)
+        navigator.clipboard.writeText(url)
       },
       args: [tab.url],
     })
@@ -20,6 +21,3 @@ const executeTabScript = async (tab: any, action: (url: string) => void) => {
 
 const getCurrentTab = async () =>
   (await chrome.tabs.query({ active: true, currentWindow: true })).at(0)
-
-const writeToClipboard = async (content: string) =>
-  await navigator.clipboard.writeText(content)
