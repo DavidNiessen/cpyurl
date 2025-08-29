@@ -35,13 +35,14 @@ jobs:
       - name: Extract version from manifest.json
         id: manifest
         run: |
-          VERSION=$(jq -r .version manifest.json)
+          VERSION=$(jq -r .version manifest.json | xargs)
           echo "version=$VERSION" >> $GITHUB_OUTPUT
 
       - name: Get latest release version
         id: latest_release
         run: |
-          LATEST_VERSION=$(gh release list --limit 1 | awk '{print $1}')
+          LATEST_VERSION=$(gh api repos/${{ github.repository }}/releases/latest --jq .tag_name 2>/dev/null || echo "")
+          LATEST_VERSION=$(echo "$LATEST_VERSION" | xargs)
           echo "latest=$LATEST_VERSION" >> $GITHUB_OUTPUT
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
