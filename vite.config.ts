@@ -7,7 +7,6 @@ export default defineConfig({
     outDir: 'dist/cpyurl',
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'src/index.ts'),
         background: resolve(__dirname, 'src/background/index.ts'),
         notification: resolve(__dirname, 'src/notification/index.ts'),
       },

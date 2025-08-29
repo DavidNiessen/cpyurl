@@ -1,6 +1,6 @@
 {
   "name": "cpyurl",
-  "version": "0.0.0",
+  "version": "1.0.3",
   "description": "Simple chrome extension that allows you to copy the current tab url into your clipboard.",
   "type": "module",
   "main": "index.js",
@@ -9,7 +9,6 @@
     "url": "https://github.com/DavidNiessen/cpyurl.git"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "vite build",
     "zip": "cd dist && zip -r cpyurl.zip cpyurl",
     "build:bundle": "vite build && cd dist/cpyurl && zip -r ../cpyurl.zip ."
