@@ -3,7 +3,7 @@
   "name": "cpyurl",
   "homepage_url": "https://skillcode.dev",
   "version": "1.0.0",
-  "description": "Simple chrome extension that allows you to copy the current url into your clipboard.",
+  "description": "Simple chrome extension that allows you to copy the current tab url into your clipboard.",
   "permissions": ["tabs", "activeTab", "scripting"],
   "commands": {
     "copy-url": {

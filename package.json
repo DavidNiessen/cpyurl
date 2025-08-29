@@ -1,7 +1,7 @@
 {
   "name": "cpyurl",
   "version": "0.0.0",
-  "description": "Simple chrome extension that allows you to copy the current url into your clipboard.",
+  "description": "Simple chrome extension that allows you to copy the current tab url into your clipboard.",
   "type": "module",
   "main": "index.js",
   "repository": {

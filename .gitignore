@@ -1,0 +1,15 @@
+# ide
+.idea
+
+# personal settings
+.npmrc
+
+# dependencies
+node_modules
+
+# build outputs
+dist
+
+# misc
+.DS_store
+*.pem
