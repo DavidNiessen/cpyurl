@@ -1,6 +1,6 @@
 # cpyurl
 
-### Simple Chrome extension that allows you to copy the current url into your clipboard
+### Simple Chrome extension that allows you to copy the current tab url into your clipboard
 
 ## -- THIS EXTENSION IS WORK IN PROGRESS --
 TODO
