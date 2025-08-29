@@ -1,0 +1,50 @@
+name: Build & Release Chrome Extension
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build & bundle extension
+        run: pnpm run build:bundle
+
+      - name: Extract version from manifest.json
+        id: manifest
+        run: |
+          VERSION=$(jq -r .version manifest.json)
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Get latest release version
+        id: latest_release
+        run: |
+          LATEST_VERSION=$(gh release list --limit 1 | awk '{print $1}')
+          echo "latest=$LATEST_VERSION" >> $GITHUB_OUTPUT
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create release if version changed
+        if: steps.manifest.outputs.version != steps.latest_release.outputs.latest
+        run: |
+          gh release create "${{ steps.manifest.outputs.version }}" dist/cpyurl.zip --title "Release ${{ steps.manifest.outputs.version }}" --notes "Automated release for version ${{ steps.manifest.outputs.version }}"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
