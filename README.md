@@ -29,4 +29,5 @@ Prerequisites: node v22 and pnpm
 | MacOS    | Command+Shift+L |
 | Linux    | Ctrl+Shift+L    |
 | ChromeOS | Ctrl+Shift+L    |
+
 To manually configure shortcuts, navigate to [chrome://extensions/](chrome://extensions/)
