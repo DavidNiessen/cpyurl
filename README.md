@@ -23,11 +23,12 @@ Prerequisites: node v22 and pnpm
 
 #### Default shortcuts:
 
-| OS       | Shortcut        |
-|----------|-----------------|
-| Windows  | Ctrl+Shift+L    |
-| MacOS    | Command+Shift+L |
-| Linux    | Ctrl+Shift+L    |
-| ChromeOS | Ctrl+Shift+L    |
+| OS       | Shortcut |
+|----------|----------|
+| Windows  | Alt+C    |
+| MacOS    | Ctrl+C   |
+| Linux    | Alt+C    |
+| ChromeOS | Alt+C    |
 
-To manually configure shortcuts, navigate to [chrome://extensions/](chrome://extensions/shortcuts)
+To manually configure shortcuts, navigate to:
+> chrome://extensions/shortcuts
