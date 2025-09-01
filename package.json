@@ -1,6 +1,6 @@
 {
   "name": "cpyurl",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Simple chrome extension that allows you to copy the current tab url into your clipboard.",
   "type": "module",
   "author": "DavidNiessen",
