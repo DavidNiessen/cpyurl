@@ -11,7 +11,7 @@
   "scripts": {
     "build": "vite build",
     "zip": "cd dist && zip -r cpyurl.zip .",
-    "build:bundle": "vite build && cd dist && zip -r cpyurl.zip ."
+    "build:bundle": "vite build && pnpm run zip"
   },
   "keywords": [],
   "author": "DavidNiessen",
