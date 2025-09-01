@@ -1,6 +1,5 @@
 import fg from 'fast-glob'
-import { join, relative, resolve } from 'path'
-import copy from 'rollup-plugin-copy'
+import { relative, resolve } from 'path'
 import { defineConfig } from 'vite'
 
 const OUT_DIR = resolve(__dirname, 'dist')
@@ -26,16 +25,7 @@ export default defineConfig({
           return relativePath.replace(/\.ts$/, '.js')
         },
       },
-      plugins: [
-        // @ts-ignore
-        copy({
-          targets: [
-            { src: 'manifest.json', dest: OUT_DIR },
-            { src: 'assets/img/*', dest: join(OUT_DIR, 'assets/img') },
-          ],
-          hook: 'writeBundle',
-        }),
-      ],
     },
   },
+  publicDir: 'static',
 })
