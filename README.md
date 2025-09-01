@@ -4,7 +4,6 @@
 
 ## -- THIS EXTENSION IS WORK IN PROGRESS --
 TODO
-- find workaround to skip confirmation
 - implement toast notification
 
 #### Installation
