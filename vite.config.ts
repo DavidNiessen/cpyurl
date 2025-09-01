@@ -1,8 +1,8 @@
-import { defineConfig } from 'vite'
-import { relative, resolve } from 'path'
-import copy from 'rollup-plugin-copy'
 import fg from 'fast-glob'
+import { relative, resolve } from 'path'
+import { defineConfig } from 'vite'
 
+const OUT_DIR = resolve(__dirname, 'dist')
 const srcDir = resolve(__dirname, 'src')
 
 const tsFiles = fg.sync('**/*.ts', { cwd: srcDir }).reduce(
@@ -16,7 +16,7 @@ const tsFiles = fg.sync('**/*.ts', { cwd: srcDir }).reduce(
 
 export default defineConfig({
   build: {
-    outDir: 'dist/cpyurl',
+    outDir: OUT_DIR,
     rollupOptions: {
       input: tsFiles,
       output: {
@@ -25,16 +25,7 @@ export default defineConfig({
           return relativePath.replace(/\.ts$/, '.js')
         },
       },
-      plugins: [
-        // @ts-ignore
-        copy({
-          targets: [
-            { src: 'manifest.json', dest: 'dist/cpyurl' },
-            { src: 'assets/img/*', dest: 'dist/cpyurl/images' },
-          ],
-          hook: 'writeBundle',
-        }),
-      ],
     },
   },
+  publicDir: 'static',
 })

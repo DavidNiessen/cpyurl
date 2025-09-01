@@ -35,7 +35,7 @@ jobs:
       - name: Extract version from manifest.json
         id: manifest
         run: |
-          VERSION=$(jq -r .version manifest.json | xargs)
+          VERSION=$(jq -r .version static/manifest.json | xargs)
           echo "version=$VERSION" >> $GITHUB_OUTPUT
 
       - name: Get latest release version
