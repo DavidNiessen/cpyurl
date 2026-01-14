@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cpyurl</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>cpyurl</h1>
+        <p class="subtitle">Copy URL to clipboard</p>
+      </header>
+
+      <main>
+        <div class="current-url">
+          <label>Current URL:</label>
+          <div id="currentUrl" class="url-display">Loading...</div>
+        </div>
+
+        <div class="actions">
+          <button id="copyPlain" class="btn btn-primary">
+            <span class="icon">📋</span>
+            Copy Plain
+          </button>
+          <button id="copyMarkdown" class="btn">
+            <span class="icon">📝</span>
+            Copy Markdown
+          </button>
+          <button id="copyHtml" class="btn">
+            <span class="icon">🔗</span>
+            Copy HTML
+          </button>
+        </div>
+
+        <div class="settings">
+          <h3>Settings</h3>
+          <div class="setting-item">
+            <label for="defaultFormat">Default Format:</label>
+            <select id="defaultFormat">
+              <option value="plain">Plain URL</option>
+              <option value="markdown">Markdown</option>
+              <option value="html">HTML</option>
+            </select>
+          </div>
+          <div class="setting-item">
+            <label>
+              <input type="checkbox" id="autoClose" />
+              Auto-close popup after copy
+            </label>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <div id="status" class="status"></div>
+      </footer>
+    </div>
+    <script src="popup.js" type="module"></script>
+  </body>
+</html>

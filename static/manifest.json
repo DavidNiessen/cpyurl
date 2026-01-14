@@ -2,9 +2,17 @@
   "manifest_version": 3,
   "name": "cpyurl",
   "homepage_url": "https://skillcode.dev",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Simple chrome extension that allows you to copy the current tab url into your clipboard.",
-  "permissions": ["tabs", "activeTab", "scripting", "clipboardWrite"],
+  "permissions": ["tabs", "activeTab", "scripting", "clipboardWrite", "notifications", "storage"],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "48": "assets/img/icon-48.png",
+      "128": "assets/img/icon-128.png"
+    },
+    "default_title": "Copy URL"
+  },
   "commands": {
     "copy-url": {
       "suggested_key": {
